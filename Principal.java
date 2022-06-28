@@ -1,11 +1,11 @@
-package presentacion;
+package logica;
 
 import com.sun.tools.javac.Main;
 import logica.GestionNotas;
 
 import java.util.Scanner;
 
-public class Pricipal {
+public class Principal {
     public static void main(String [] args){
         GestionNotas gnotas= new GestionNotas();
         int op;//opcion elegida por el usuario
@@ -16,8 +16,9 @@ public class Pricipal {
             System.out.println("1.- Añadir nota");
 
             System.out.println("2.- Ver media");
-            System.out.println("3.- ver aprboada" );
-            System.out.println("4.- Salir");
+            System.out.println("3.- ver aprobada" );
+            System.out.println("4.- Ver Nota Maxima");
+            System.out.println("5.- Salir");
             op = Integer.parseInt(scanner.nextLine());
             switch(op) {
 
@@ -31,9 +32,11 @@ public class Pricipal {
                     break;
                 case 3:
                     System.out.println("Aprobados: "+ gnotas.aprobados());
+                case 4:
+                    System.out.println("Nota Maxima: "+ gnotas.NumMaximo());
             }
 
-        }while(op!= 4);
+        }while(op!= 5);
 
     }
 }
